@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function TimeInput({ inputStyle, setUserTime }) {
+export default function TimeInput({ setUserTime }) {
     const [ hour , setHour ] = useState('')
     const [ minute , setMinute ] = useState('')
 
