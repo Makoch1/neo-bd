@@ -1,4 +1,4 @@
-export default function Info({ className='', label, info }) {
+export default function Info({ className, label, info }) {
     return (
         <div className={className}>
             <p className="label">{label}</p>
