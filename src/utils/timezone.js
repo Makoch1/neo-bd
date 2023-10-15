@@ -2,7 +2,7 @@ export function toUTCYMD(dateString, timeString) {
     const d = new Date(`${dateString} 0${timeString}`)
     
     const year = d.getUTCFullYear()
-    const month = d.getUTCMonth() + 1 > 9 ? d.getUTCMonth() : '0' + (d.getUTCMonth() + 1)
+    const month = d.getUTCMonth() + 1 > 9 ? d.getUTCMonth() + 1: '0' + (d.getUTCMonth() + 1)
     const day = d.getUTCDate()
 
     return `${year}-${month}-${day}`    
