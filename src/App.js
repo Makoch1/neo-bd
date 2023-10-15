@@ -18,7 +18,7 @@ function LandingPage(){
 					Pick whether you want to find the closest by distance, or one that passed by nearest to the time specified (defaults to 12 midnight).
 				</p>
 				<a href='#main-body'><button className='button-to-right far-to-top shadowed'>Find NEO buddy!</button></a>
-				<a href='https://github.com/Makoch1/neo-bd'><p className='white-text'>Check out the github repo!</p></a>
+				<a href='https://github.com/Makoch1/neo-bd' target='_blank' rel='noreferrer'><p className='white-text'>Check out the github repo!</p></a>
 			</div>
 		</div>
 	)
@@ -108,7 +108,7 @@ function App() {
 	// default is by distance
 	const filters = ['Distance', 'Time']
 	const [ filterType , setFilterType ] = useState(filters[0])
-	const [ userDate, setUserDate ] = useState('2005-06-28')
+	const [ userDate, setUserDate ] = useState('')
 	const [ userTime , setUserTime ] = useState('00:00')
 	
 	return (
