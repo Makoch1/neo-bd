@@ -17,7 +17,8 @@ function LandingPage(){
 					Just input your birthdate, and optionally the time as well.
 					Pick whether you want to find the closest by distance, or one that passed by nearest to the time specified (defaults to 12 midnight).
 				</p>
-				<button className='button-to-right far-to-top shadowed'>Find NEO buddy!</button>
+				<a href='#main-body'><button className='button-to-right far-to-top shadowed'>Find NEO buddy!</button></a>
+				<a href='https://github.com/Makoch1/neo-bd'><p className='white-text'>Check out the github repo!</p></a>
 			</div>
 		</div>
 	)
@@ -45,9 +46,8 @@ function NeoInfo({ filterBase='Distance' , userTime,  userDate }) {
 	const userTimeMs = getEpochMS(userDate, userTime)
 	
 	// get neo info from nasa
-	const API_KEY = 'API_KEY'
 	useEffect(() => {
-		fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${userUTCDate}&end_date=${userUTCDate}&api_key=${API_KEY}`)
+		fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${userUTCDate}&end_date=${userUTCDate}&api_key=${process.env.REACT_APP_API_KEY}`)
 		.then(response => response.json())
 		.then(response => {
 			const allObjects = response['near_earth_objects'][userUTCDate]
@@ -114,7 +114,7 @@ function App() {
 	return (
 		<>
 		<LandingPage />
-		<div className='main-body full-screen'>
+		<div id='main-body' className='main-body full-screen'>
 			<div className='container'>
 				<h1 className='category'>Your NEO buddy!</h1>
 			</div>
