@@ -47,7 +47,9 @@ function NeoInfo({ filterBase='Distance' , userTime,  userDate }) {
 	
 	// get neo info from nasa
 	useEffect(() => {
-		fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${userUTCDate}&end_date=${userUTCDate}&api_key=${process.env.REACT_APP_API_KEY}`)
+		fetch(`https://api.nasa.gov/neo/rest/v1/feed?start_date=${userUTCDate}&end_date=${userUTCDate}&api_key=${process.env.REACT_APP_API_KEY}`,
+			{referrerPolicy: "unsafe-url"}
+		)
 		.then(response => response.json())
 		.then(response => {
 			const allObjects = response['near_earth_objects'][userUTCDate]
